@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+        }
+        .home-page .nav-bar{
+            width: 100%;
+            height: 40px;
+            background-color: #366536;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .home-page .nav-bar .blox-left .manu{
+            width: 50%;
+            height: 100%;
+            gap: 25px;
+            margin-left: 50px;
+            display: flex;
+            font-weight: 700;
+        }
+        .home-page .nav-bar .blox-left .drop{
+            position: absolute;
+            top: 100%;
+            display: none;
+        }
+        .home-page .nav-bar .blox-left ul li{
+            list-style-type: none;
+            font-size: 20px;
+        }
+        .home-page .nav-bar .blox-left ul li a{
+            color: rgb(251, 245, 245);
+            text-decoration: none;
+        }
+        .home-page .nav-bar .blox-left .manu .drop{
+            margin-left: -10px;
+        }
+        .home-page .nav-bar .blox-left .manu .drop li{
+            margin: 10px ;
+        }
+        .home-page .nav-bar .blox-left .manu li:hover > .drop{
+            display: block;
+            background-color: #366536;
+        }
+        .home-page .nav-bar .blox-right{
+            width: 10%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .home-page .nav-bar .blox-right .mode{
+            padding: 10px;
+            width: 110px;
+            height: 30px;
+            background-color: #283A28;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .home-page .header{
+            width: 100%;
+            height: 3vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color:#366536;
+            padding: 30px 40px 30px 50px;
+            border-bottom: 2px solid gray;
+        }
+        .home-page .header .input input{
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(207, 220, 231);
+
+        }
+        .home-page .body{
+            width: 97%;
+            height: 80vh;
+            background-image: url(/Ankorwat.jpg);
+            margin: 20px auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .home-page .body::after{
+            content: "";
+            width: 100%;
+            height: 80vh;
+            background-color: black;
+            position: absolute;
+            z-index: 0;
+            opacity: 0.6;
+            border-radius: 20px;
+        }
+        .home-page .body .blox-left{
+            width: 50%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .home-page .body .blox-left h1{
+            color: #40ECCD;
+            font-size: 45px;
+        }
+        .home-page .body .blox-left{
+            width: 35%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .home-page .body .blox-left p{
+            color:#40A4EB;
+            margin:20px 20px 20px 0;
+        }
+        .home-page .body .blox-left button{
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+        }
+        .home-page .body .blox-right{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+
+        }
+        .home-page .body .blox-right img{
+            width: 175px;
+            height: 220px;
+            border-radius: 10px;
+        }
+        .page1 {
+            width: 97%;
+            margin: 0 auto;
+        }
+        .page1 .header{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .page1 .body .top-content .blox-left{
+            width: 49%;
+        }
+        .page1 .top-content{
+            display: flex;
+            justify-content: space-between;
+        }
+        .page1 .top-content .blox-left img{
+            width: 720px;
+            height: 280px;
+            border-radius: 20px;
+        }
+        .page1 .top-content .blox-left h3,p{
+            margin: 10px 10px 10px 5px;
+        }
+        .page1 .body .blox-left .text-icon{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+        }
+        
+
+        .page1 .body .top-content .blox-right{
+            width: 49%;
+        }
+        .page1 .top-content .blox-right img{
+            width: 720px;
+            height: 280px;
+            border-radius: 20px;
+        }
+        .page1 .top-content .blox-right h3,p{
+            margin: 10px 10px 10px 5px;
+        }
+        .page1 .body .blox-right .text-icon{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+        }
+        .page1 .buttom-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page1 .buttom-content .text h1{
+            padding: 20px;
+        }
+        .page1 .buttom-content .btn button{
+            padding:5px 25px;
+            border-radius: 5px;
+            border: 2px solid #87C6F3;
+            color: #87C6F3;
+            font-weight: 700;
+            background-color: white;
+            
+        }
+        .page1 .buttom-content .btn{
+            width:510px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 40px;
+        }
+        .page1 .buttom-content .image{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .page1 .buttom-content .image img{
+            width: 470px;
+            height: 320px;
+            border-radius: 20px;
+        }
+        .page2{
+            width: 97%;
+            margin: 0 auto;
+        }
+        .page2 .body{
+
+        }
+        .page2 .body .header h1{
+            display: flex;
+            justify-content: center;
+            padding: 25px;
+        }
+        .page2 .body .image{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 25px;
+        }
+        .page2 .body .image img{
+            width: 470px;
+            height: 320px;
+            border-radius: 20px;
+
+        }
+        .page2 .body .btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .page2 .body button{
+            padding: 5px 15px;
+            border: 2px solid #87C6F3;
+            border-radius: 5px;
+            color: #87C6F3;
+            font-weight: 700;
+        }
+        .page2 .foter{
+            width: 100%;
+            background-color: #40A4EC;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 20px;
+        }
+        .page2 .foter .blox-left h2{
+            color: white;
+            margin-bottom: 15px;
+        }
+        .page2 .foter .blox-left .mol{
+            width: 100px;
+            height: 100px;
+            background-color: #D9D9D9;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page2 .foter .blox-center{
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+            color: white;
+
+        }
+        .page2 .foter .blox-right{
+            width: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            gap: 20px;
+}
+        .page2 .foter .blox-right .mol{
+            width: 40px;
+            height: 40px;
+            background-color: #D9D9D9;
+            border-radius: 50%;
+        }
+        .page2 .foter .blox-right .mol-boss{
+            display: flex;
+            gap: 10px;
+            
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="home-page">
+            <div class="nav-bar">
+                <div class="blox-left">
+                    <ul class="manu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Category</a>
+                            <ul class="drop">
+                                <li><a href="#">optioin1</a></li>
+                                <li><a href="#">optipn2</a></li>
+                                <li><a href="#">option3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Blox</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="blox-right">
+                    <div class="mode">
+                        <i class='bx bx-sun bx-spin' ></i>
+                        <p>Ligh mode</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header">
+                <h2>LOGO</h2>
+                <div class="input">
+                    <input type="text" placeholder="Search here">
+                </div>
+                <div class="login">
+                    <p>login</p>
+
+                </div>
+
+            </div>
+            <div class="body">
+                <div class="blox-left">
+                    <h1>Explore the best <br>place in Cambodia</h1>
+                    <p>Enchant your journey, planning explore the best <br> place in Cambodea..</p>
+                    <button>Explore now</button>
+                </div>
+                <div class="blox-right">
+                    <img src="/Angkor1.png" alt="">
+                    <img src="/Angkor2.png" alt="">
+                    <img src="/Angkor3.png" alt="">
+                </div>
+            </div>
+        </div>
+    <div class="page1">
+        <div class="header">
+            <h1>Special features for the best and exciting exploration</h1>
+        </div>
+        <div class="body">
+            <div class="top-content">
+                <div class="blox-left">
+                    <img src="/beach1.jpg" alt="">
+                    <div class="text-icon">
+                        <h3>Best place to vist</h3>
+                        <i class='bx bx-arrow-back bx-rotate-180' ></i>
+                    </div>
+                    <p>We provide the information about the best place for visit <br> in Cambodia</p>
+                </div>
+                <div class="blox-right">
+                    <img src="/food1.jpg" alt="">
+                    <div class="text-icon">
+                        <h3>Best place to vist</h3>
+                        <i class='bx bx-arrow-back bx-rotate-180' ></i>
+                    </div>
+                    <p>We provide the information about the best place for visit <br> in Cambodia</p>
+                    
+                </div>
+            </div>
+            <div class="buttom-content">
+                <div class="text">
+                    <h1>Trending place and food in Cambodia</h1>
+                </div>
+                <div class="btn">
+                    <button>All</button>
+                    <button>Places</button>
+                    <button>Food</button>
+                    <button>Deserts</button>
+                </div>
+                <div class="image">
+                    <img src="/food2.jpg" alt="">
+                    <img src="/Angkor1.png" alt="">
+                    <img src="/Angkor2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page2">
+        <div class="body"> 
+           <div class="header">
+                <h1>Place in Cambodia</h1>
+            </div>
+            <div class="image">
+                <img src="/Angkor2.png" alt="">
+                <img src="/Angkor2.png" alt="">
+                <img src="/Angkor2.png" alt="">
+            </div>
+            <div class="btn">
+                <button>See all <i class='bx bx-arrow-back bx-rotate-180' ></i></button>
+            </div>
+
+        </div>
+        <div class="foter">
+            <div class="blox-left">
+                <h2>VISITio.</h2>
+                <div class="mol">
+                    <h3>LOGO</h3>
+                </div>
+            </div>
+            <div class="blox-center">
+                <h2>Home</h2>
+                <h2>Place</h2>
+                <h2>Food</h2>
+            </div>
+            <div class="blox-right">
+                <h2>Social</h2>
+                <div class="mol-boss">
+                    <div class="mol"></div>
+                    <div class="mol"></div>
+                    <div class="mol"></div>
+                    <div class="mol"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+</html>
